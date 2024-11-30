@@ -1,0 +1,86 @@
+.content {
+	@include adaptiveValue("margin-top", 40, 20);
+	@include adaptiveValue("padding-left",60 ,30 );
+	@include adaptiveValue("padding-right",60 ,30 );
+}
+.content__container {
+}
+.content__title {
+	font-weight: 700;
+	color: #000;
+	@include adaptiveValue("font-size", 32, 20);
+}
+
+.content__cards{
+	@include adaptiveValue("margin-top", 30, 20);
+	@include adaptiveValue("margin-bottom", 30, 20);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	flex: 0 1 20%;
+	justify-content: space-between;
+	column-gap: toRem(40);
+	@media (max-width:$mobile){
+		 column-gap: toRem(20); 
+		 row-gap: toRem(20);
+	}
+
+}
+
+
+.card {
+	border: toRem(1) solid #f3f3f3;
+	border-radius: toRem(40);
+	padding: toRem(30);
+	// display: inline-block;
+	max-width: toRem(260);
+	display: flex;
+	flex-direction: column;
+	row-gap: toRem(14);
+
+
+
+}
+
+img.card__image {
+	
+		width: toRem(130);
+		height: toRem(112);
+		
+	
+}
+.card__name {
+	font-weight: 400;
+	color: #000;
+	max-width: toRem(150);
+	@include adaptiveValue("font-size", 14, 12);
+}
+.card__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.card__price {
+	display: flex;
+	flex-direction: column;
+	row-gap: toRem(2);
+
+}
+.card__subtitle {
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #bdbdbd;
+	@include adaptiveValue("font-size", 11, 9);
+}
+.card__amout {
+	font-weight: 700;
+	color: #000;
+	@include adaptiveValue("font-size", 14, 12);
+}
+.card__pluse {
+	cursor: pointer;
+}
+img.card__pluse-img {
+	width: toRem(32);
+	height: toRem(32);
+
+}
