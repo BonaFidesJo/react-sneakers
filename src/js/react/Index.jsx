@@ -5,7 +5,36 @@ import ReactDOM from "react-dom/client";
 
 const App = () => (
 	<>
+
+		<div className="overlay">
+			<div className="drawer">
+				<h2 className="drawer__name">Корзина</h2>
+
+				<div className="drawer__item">
+					<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
+					<div className="drawer__text">
+						<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
+						<b>12 999 руб.</b>
+					</div>
+					<img className="drawer__button" src="/img/btn.svg" alt="button" />
+				</div>
+
+				<div className="drawer__item">
+					<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
+					<div className="drawer__text">
+						<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
+						<b>12 999 руб.</b>
+					</div>
+					<img className="drawer__button" src="/img/btn.svg" alt="button" />
+				</div>
+
+
+			</div>
+		</div>
 		<div className="wrapper">
+
+
+
 			<header className="header">
 				<div className="header__container">
 					<div className="header__logo">
@@ -23,6 +52,10 @@ const App = () => (
 								<span>1205 руб.</span>
 							</li>
 							<li className="header__item">
+								<img src="./img/header/like.svg" />
+								<a className="header__link" href="#!">Закладки</a>
+							</li>
+							<li className="header__item">
 								<img src="./img/header/person.svg" />
 								<a className="header__link" href="#!">Профиль</a>
 							</li>
@@ -37,9 +70,17 @@ const App = () => (
 
 			<div className="content">
 				<div className="content__container">
-					<h1 className="content__title">Все кроссовки</h1>
+					<div className="content__navbar">
+						<h1 className="content__title">Все кроссовки</h1>
+						<div className="content__search search-block">
+							<div className="search-block__img"><img src="@img/card/search.svg" alt="search" /></div>
+							<input type="text" placeholder="Поиск..." className="search-block__placeholder" />
+						</div>
+					</div>
+
 					<div className="content__cards">
 						<div className="card">
+							<div className="card__like"> <img src="@img/card/heart-01.svg" alt="unlike" /></div>
 							<img className="card__image" src="@img/card/sneakers/01.jpg" alt="Image" />
 							<div className="card__name">
 								Мужские Кроссовки Nike Blazer Mid Suede
@@ -50,7 +91,7 @@ const App = () => (
 									<div className="card__amout">12 999 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -66,7 +107,7 @@ const App = () => (
 									<div className="card__amout">12 999 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -82,7 +123,7 @@ const App = () => (
 									<div className="card__amout">8 499 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -98,7 +139,7 @@ const App = () => (
 									<div className="card__amout">8 999 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -114,7 +155,7 @@ const App = () => (
 									<div className="card__amout">15 199 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -130,7 +171,7 @@ const App = () => (
 									<div className="card__amout">11 299 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -146,7 +187,7 @@ const App = () => (
 									<div className="card__amout">10 799 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -162,7 +203,7 @@ const App = () => (
 									<div className="card__amout">16 499 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -178,7 +219,7 @@ const App = () => (
 									<div className="card__amout">16 499 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -194,7 +235,7 @@ const App = () => (
 									<div className="card__amout">16 499 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -210,7 +251,7 @@ const App = () => (
 									<div className="card__amout">16 499 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
@@ -226,7 +267,7 @@ const App = () => (
 									<div className="card__amout">16 499 руб.</div>
 								</div>
 								<button className="card__pluse">
-									<img src="@img/card/pluse.svg" alt="" className="card__pluse-img" />
+									<img src="@img/card/pluse-01.svg" alt="" className="card__pluse-img" />
 								</button>
 							</div>
 						</div>
