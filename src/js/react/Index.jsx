@@ -1,164 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import Card from "./card.jsx";
+import Card from "./components/Card.jsx";
+import Header from "./components/Header.jsx";
+import Drawer from "./components/Drawer.jsx";
 
 const App = () => (
 	<>
-
-		<div className="overlay">
-			<div className="drawer">
-				<div className="drawer__name">
-					<h2>Корзина</h2>
-					<img className="drawer__button" src="/img/btn.svg" alt="button" />
-				</div>
-
-				<div className="drawer__body">
-					<div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div>
-
-					<div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div>
-					<div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div>
-
-
-
-				</div>
-				<ul className="drawer__count count-drawer">
-					<li className="count-drawer__item">
-						<div className="count-drawer__text">Итого</div>
-						<div className="count-drawer__dash"></div>
-						<div className="count-drawer__summ">21 498 руб.</div>
-					</li>
-					<li className="count-drawer__item">
-						<div className="count-drawer__text">Налог 5%</div>
-						<div className="count-drawer__dash"></div>
-						<div className="count-drawer__summ">1074 руб.</div>
-					</li>
-				</ul>
-
-				<button className="drawer__button button-green">
-					<div className="button-green__text"><span>Оформить заказ</span></div>
-					<a className="button-green__arrow"><img src="@img/arrow.svg" alt="Image"></img></a>
-				</button>
-
-			</div>
-		</div>
-
-		<header className="header">
-			<div className="header__container">
-				<div className="header__logo">
-					<img src="./img/header/logo.png" />
-					<div className="header__info">
-						<h3 className="header__title">React sneakers</h3>
-						<p>Магазин лучших кроссовок</p>
-					</div>
-				</div>
-
-				<div className="header__nav">
-					<ul className="header__list">
-						<li className="header__item">
-							<img src="./img/header/card.svg" />
-							<span>1205 руб.</span>
-						</li>
-						<li className="header__item">
-							<img src="./img/header/like.svg" />
-							<a className="header__link" href="#!">Закладки</a>
-						</li>
-						<li className="header__item">
-							<img src="./img/header/person.svg" />
-							<a className="header__link" href="#!">Профиль</a>
-						</li>
-					</ul>
-				</div>
-
-
-
-
-			</div>
-		</header>
+		<Drawer />
+		<Header />
 
 		<div className="content">
 			<div className="content__container">
@@ -358,7 +208,6 @@ const App = () => (
 	</>
 );
 
-// Об'єкт для виводу
 
 
 const root = document.querySelector("#root")
