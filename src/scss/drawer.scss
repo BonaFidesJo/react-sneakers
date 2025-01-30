@@ -1,0 +1,205 @@
+/* Rectangle 24 */
+
+.overlay{
+	display: none;
+	position: fixed;
+
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	z-index: 3;
+	top: 0;
+	left: 0;
+}
+
+.drawer{
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue("padding-left", 30,20 );
+	@include adaptiveValue("padding-top", 30, 20);
+	@include adaptiveValue("padding-right", 30, 20);
+	@include adaptiveValue("padding-bottom", 30, 20);
+	position: absolute;
+	// width: toRem(420);
+	height: 100%;
+	right: 0;
+	top: 0;
+	z-index: 4;
+	
+	
+	background: #FFFFFF;
+	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+	@media (min-width:$pc){
+		width: toRem(500);
+	}
+
+
+	&__name{
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 24, 18);
+		&:not(:last-child) {margin-bottom: toRem(30);}
+	}
+	
+		&__body{
+		margin:0 auto;
+		flex: 1 1 100%;
+		overflow: auto;
+		padding-bottom: toRem(20);
+		
+	}
+	&__item{
+		background-color: rgba(245, 241, 241, 0.205);
+		border: toRem(1) solid #f3f3f3;
+		border-radius: toRem(20);
+		width: toRem(420);
+		height: auto;
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("padding-top", 30, 20);
+		@include adaptiveValue("padding-bottom", 30, 20);
+		&:not(:last-child) {margin-bottom: toRem(20);}
+		justify-content: space-around;
+		transition: all 0.3s;
+		&:hover{
+			border: toRem(2) solid #cacaca;
+		}
+		
+	// opacity: 1;
+	// display: flex;
+	// align-items: center;
+	// position: absolute;
+	// top: 0;
+	// right: 0;
+	img.drawer__image{
+
+		width: toRem(70);
+		height: toRem(70);
+		@include adaptiveValue("margin-right", 20, 18);
+		@include adaptiveValue("margin-left", 20, 18);
+	}
+	
+
+
+}
+&__text{
+	@include adaptiveValue("font-size", 14, 12);
+	@include adaptiveValue("margin-right", 12, 10);
+	display: flex;
+	gap: toRem(8);
+	flex-direction: column;
+	max-width: toRem(150);
+	line-height: 1.2;
+	b{
+	font-weight: 700;
+	margin-top: toRem(8);
+	}
+	}
+
+
+	&__button{
+	opacity: 0.5;
+	cursor: pointer;
+	align-self: end;
+	transition: all 0.3s;
+	&:hover{
+		opacity: 1;
+	}
+	img{
+	
+		width: toRem(30);
+		height: toRem(30);
+	}
+	
+
+}
+
+	&____count{
+
+	}
+	&__button{}
+	
+}
+
+.count-drawer{
+	@include adaptiveValue("margin-bottom", 24, 20);
+	&__item{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&:not(:last-child) {margin-bottom: toRem(20);}
+	}
+	&__text{
+		font-weight: 300;
+		@include adaptiveValue("font-size", 16, 14);
+		white-space: nowrap;
+	}
+	&__dash{
+		border-bottom: toRem(1) dashed rgb(74, 74, 74);
+		width: 100%;
+		height: toRem(1);
+		z-index: 15;
+		margin-left: toRem(20);
+		margin-right: toRem(20);
+		align-self: end;
+	}
+	&__summ{
+		font-weight: 600;
+		white-space: nowrap;
+		align-self: end;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+}
+
+.button-green{
+	background-color: #9dd458;
+	border-radius: toRem(18);
+	width: 100%;
+	max-height: toRem(55);
+	text-align: center;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	transition: all 0.3s;
+	&:hover{
+		background-color: #82ec00;
+		.button-green__text{
+			font-size: toRem(20);
+			white-space: nowrap;
+			}
+			.button-green__arrow{
+				img{
+					flex:0 1 toRem(22);
+					width: toRem(22);
+					height: toRem(22);
+				}
+				
+			}
+	}
+	
+	
+	&__text{
+		font-weight: 600;
+		@include adaptiveValue("font-size", 16, 14);
+		text-align: center;
+		color: #FFFFFF;
+		@include adaptiveValue("padding-top", 18, 14);
+		@include adaptiveValue("padding-bottom", 18, 14);
+		margin-left: toRem(70);
+		transition: all 0.3s;
+			}
+	&__arrow{
+		display: flex;
+		margin-left: toRem(70);
+		
+		img{
+			flex:0 1 toRem(12);
+			width: toRem(12);
+			height: toRem(12);
+		}
+	}
+}
