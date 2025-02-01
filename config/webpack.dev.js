@@ -172,6 +172,9 @@ const config = {
 		})
 	],
 	resolve: {
+		// resolve: {
+		// 	extensions: ['.js', '.jsx']
+		// },
 		alias: {
 			"@scss": `${paths.src}/scss`,
 			"@js": `${paths.src}/js`,
