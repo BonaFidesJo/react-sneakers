@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import React, { useState } from 'react';
 
 import Card from "./components/Card.jsx";
 import Header from "./components/Header.jsx";
@@ -67,39 +68,73 @@ const arr = [
 ];
 
 
-const App = () => (
-	<>
-		<Drawer />
-		<Header />
+// React.useState(5);
+// function test() {
 
-		<div className="content">
-			<div className="content__container">
-				<div className="content__navbar">
-					<h1 className="content__title">Все кроссовки</h1>
-					<div className="content__search search-block">
-						<div className="search-block__img"><img src="@img/card/search.svg" alt="search" /></div>
-						<input type="text" placeholder="Поиск..." className="search-block__placeholder" />
+
+// }
+// console.log(test);
+
+// let count = 5;
+
+// const plus = () => {
+// 	count++;
+// }
+
+// const minus = () => {
+// 	count--;
+// 	console.log(count);
+// }
+
+
+// const test = React.useState();
+// console.log(test);
+
+function App() {
+	return (
+
+
+
+		/* <center>
+			<h1>{count}</h1>
+			<button onClick={plus}>+</button>
+			<button onClick={() => minus(1)}>-</button>
+
+		</center> */
+		<div className="contain">
+			<Drawer />
+			<Header />
+			<div className="content">
+
+
+
+				<div className="content__container">
+					<div className="content__navbar">
+						<h1 className="content__title">Все кроссовки</h1>
+						<div className="content__search search-block">
+							<div className="search-block__img"><img src="@img/card/search.svg" alt="search" /></div>
+							<input type="text" placeholder="Поиск..." className="search-block__placeholder" />
+						</div>
+					</div>
+
+					<div className="content__cards">
+						{arr.map(obj =>
+							<Card
+								title={obj.name}
+								price={obj.price}
+								image={obj.image}
+								onPluse={() => console.log('Добавили в коризну')}
+								onFavourite={() => console.log('Добавили в закладки')}
+							/>
+						)}
+
 					</div>
 				</div>
-
-				<div className="content__cards">
-					{arr.map(obj =>
-						<Card
-							title={obj.name}
-							price={obj.price}
-							image={obj.image}
-							onPluse={() => console.log('Добавили в коризну')}
-							onFavourite={() => console.log('Добавили в закладки')}
-						/>
-					)}
-
-				</div>
 			</div>
+
 		</div>
-
-
-	</>
-);
+	);
+}
 
 
 

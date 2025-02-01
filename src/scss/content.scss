@@ -4,6 +4,7 @@
 	@include adaptiveValue("padding-right",60 ,30 );
 }
 .content__container {
+	
 }
 
 .content__search {
@@ -13,6 +14,7 @@
 	display: flex;
 	justify-content: space-between;
 	@include adaptiveValue("margin-bottom", 40, 15);
+	gap: toRem(5);
 }
 .search-block {
 	display: flex;
@@ -39,19 +41,24 @@
 .content__title {
 	font-weight: 700;
 	color: #000;
-	@include adaptiveValue("font-size", 32, 20);
+	@include adaptiveValue("font-size", 32, 18);
 }
 
 .content__cards{
 	@include adaptiveValue("margin-top", 30, 20);
 	@include adaptiveValue("margin-bottom", 30, 20);
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit,minmax(toRem(280),1fr));
+	// margin: 0 auto;
+	justify-content: center;
 	column-gap: toRem(40);
 	row-gap: toRem(40);
-	@media (max-width:$mobile){
-		 column-gap: toRem(20); 
-		 row-gap: toRem(20);
+	@media (min-width:$tablet){
+		grid-template-columns: repeat(4, 1fr);
+	}
+	@media (max-width:$tablet){
+		column-gap: toRem(20);
+		row-gap: toRem(20);
 	}
 
 }

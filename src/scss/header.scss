@@ -8,14 +8,17 @@ body {
  }
  
  
- .wrapper{
-	width: toRem(1080);
-	margin: 0 auto;
+ .contain{
+
+	
 	
 
 
  }
- 
+ .wrapper{
+	max-width: toRem(1080);
+	margin: 0 auto;
+ }
  
 
 .header {
@@ -28,6 +31,12 @@ body {
 .header__container {
 	display: flex;
 	justify-content: space-between;
+	@media (max-width:$tablet){
+		flex-direction: column;
+		align-items: center;
+		gap: toRem(10);
+
+	}
 	
 }
 
@@ -39,6 +48,7 @@ body {
 	h3,p{
 	  margin: 0 ;
 	}
+
 
  }
 .header__logo {
@@ -64,14 +74,24 @@ body {
 	text-transform: uppercase;
 	color: #000;
 	@include adaptiveValue("font-size", 20, 15);
+	@media (max-width:$tablet){
+		
+	}
 }
-.header__nav {
-}
+
 .header__list {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	column-gap: toRem(32);
+	white-space: nowrap;
+
+	@media (max-width:$mobile){
+		flex-direction: column;
+		row-gap: toRem(10);
+		justify-content: center;
+	}
+	
 	
 }
 .header__item {

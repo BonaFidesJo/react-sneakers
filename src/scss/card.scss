@@ -4,11 +4,13 @@
 	padding: toRem(30);
 	// display: inline-block;
 	max-width: toRem(260);
+	// width: toRem(150);
 	display: flex;
 	flex-direction: column;
 	row-gap: toRem(14);
 	position: relative;
 	transition: all 0.3s;
+	justify-self: center;
 
 	&:hover{
 		background: #FFFFFF;
