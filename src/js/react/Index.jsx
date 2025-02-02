@@ -17,19 +17,19 @@ import Drawer from "./components/Drawer.jsx";
 
 function App() {
 	const [items, setItems] = React.useState([]);
-	const [cartItems, setCartItems] = React.useState([	]);
+	const [cartItems, setCartItems] = React.useState([]);
 
 	const [cartOpened, setCartOpened] = React.useState(false);
 
-	React.useEffect(()=>{
-		fetch('https://679e4c64946b0e23c06312ce.mockapi.io/items').then(res=> {
+	React.useEffect(() => {
+		fetch('https://679e4c64946b0e23c06312ce.mockapi.io/items').then(res => {
 			return res.json();
-		}).then(json =>{
+		}).then(json => {
 			setItems(json);
 		});
-	},[]);
+	}, []);
 
-	const onAddToCart = (obj) =>{
+	const onAddToCart = (obj) => {
 		setCartItems(prev => [...prev, obj]);
 	}
 
@@ -40,7 +40,7 @@ function App() {
 		<div className="page__container">
 			{cartOpened ? <Drawer
 				onClickClose={() => setCartOpened(false)}
-				items = {cartItems}
+				items={cartItems}
 			/> : null}
 
 
@@ -68,7 +68,7 @@ function App() {
 								title={item.name}
 								price={item.price}
 								image={item.image}
-								onPlus={(obj)=>onAddToCart(obj)}
+								onPlus={(obj) => onAddToCart(obj)}
 								onFavourite={() => console.log('Добавили в закладки')}
 							/>
 						)}
