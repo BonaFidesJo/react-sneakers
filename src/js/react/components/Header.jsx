@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Header = () => {
+const Header = (props) => {
 	return (
 
 		<header className="header">
@@ -16,7 +16,7 @@ const Header = () => {
 
 				<div className="header__nav">
 					<ul className="header__list">
-						<li className="header__item">
+						<li className="header__item" onClick={props.onClickCart}>
 							<img src="./img/header/card.svg" />
 							<span>1205 руб.</span>
 						</li>

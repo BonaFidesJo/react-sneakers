@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Drawer = () => {
+const Drawer = ({onClickClose,items=[]}) => {
 	return (
 		<div className="overlay">
 
@@ -9,100 +9,21 @@ const Drawer = () => {
 			<div className="drawer">
 				<div className="drawer__name">
 					<h2>Корзина</h2>
-					<img className="drawer__button" src="/img/btn.svg" alt="button" />
+					<img onClick={onClickClose} className="drawer__button" src="/img/btn.svg" alt="button" />
 				</div>
 
 				<div className="drawer__body">
-					<div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
+					{items.map((obj) => (
+						<div className="drawer__item">
+							<a href="#!"><img className="drawer__image" src={obj.image}alt="sneakers" /></a>
+							<div className="drawer__text">
+								<p width={70}>{obj.title}</p>
+								<div className="drawer__amout">{obj.price} руб.</div>
+							</div>
+							
+							<img className="drawer__button" src="/img/btn.svg" alt="button" />
 						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div>
-
-					<div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div>
-					<div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div><div className="drawer__item">
-						<a href="#!"><img className="drawer__image" src="/img/card/sneakers/01.jpg" alt="sneakers" /></a>
-						<div className="drawer__text">
-							<p width={70}>Мужские Кроссовки Nike Air Max 270</p>
-							<b>12 999 руб.</b>
-						</div>
-						<img className="drawer__button" src="/img/btn.svg" alt="button" />
-					</div>
-
-
+					))}
 
 				</div>
 				<ul className="drawer__count count-drawer">

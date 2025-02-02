@@ -1,7 +1,7 @@
 /* Rectangle 24 */
 
 .overlay{
-	display: none;
+	// display: none;
 	position: fixed;
 
 	width: 100%;
@@ -99,7 +99,9 @@
 	}
 	}
 
-
+&__amout{
+	font-weight: 700;
+}
 	&__button{
 	opacity: 0.5;
 	cursor: pointer;

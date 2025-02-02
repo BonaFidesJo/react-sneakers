@@ -8,16 +8,20 @@ body {
  }
  
  
- .contain{
-
+ .page__container{
+	// max-width: toRem(1080);
+	background: #fff;
+	// margin: 0 auto;
+	border-radius: toRem(20);
+	height: 100vh;
 	
 	
 
 
  }
  .wrapper{
-	max-width: toRem(1080);
-	margin: 0 auto;
+	// 
+	
  }
  
 
@@ -86,7 +90,7 @@ body {
 	column-gap: toRem(32);
 	white-space: nowrap;
 
-	@media (max-width:$mobile){
+	@media (max-width:$mobile){ 
 		flex-direction: column;
 		row-gap: toRem(10);
 		justify-content: center;
@@ -99,6 +103,7 @@ body {
 	column-gap: toRem(12);
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 	img{
 		display: inline-block;
 		width: 100%;
