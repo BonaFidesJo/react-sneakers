@@ -11,6 +11,17 @@
 	z-index: 3;
 	top: 0;
 	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s, visibility 0.3s;
+	overflow: hidden;
+}
+.overlayVisible{
+	opacity: 1;
+	visibility: visible;
+	.drawer{
+		transform: translateX(0%);
+	}
 }
 
 .drawer{
@@ -21,6 +32,8 @@
 	@include adaptiveValue("padding-right", 30, 20);
 	@include adaptiveValue("padding-bottom", 30, 20);
 	position: absolute;
+	transform: translateX(100%);
+	transition: transform 0.5s;
 	// width: toRem(420);
 	height: 100%;
 	right: 0;
@@ -156,8 +169,22 @@
 	}
 }
 
+@keyframes button-loading{
+	0%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 0.7;
+	
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
 .button-green{
 	background-color: #9dd458;
+	
 	border-radius: toRem(18);
 	width: 100%;
 	max-height: toRem(55);
@@ -167,6 +194,11 @@
 	flex-direction: row;
 	justify-content: center;
 	transition: all 0.3s;
+	&:disabled{
+		background-color: #bebebe !important;
+		cursor: default;
+		animation: button-loading 0.6s ease-in-out infinite;
+	}
 	&:hover{
 		background-color: #82ec00;
 		.button-green__text{
@@ -205,3 +237,72 @@
 		}
 	}
 }
+
+.empty-drawer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	@include adaptiveValue("margin-top", 250, 80);
+	@include adaptiveValue("margin-left", 30, 10);
+	@include adaptiveValue("margin-right", 30, 10);
+	&__button{
+		background-color: #9dd458;
+		border-radius: toRem(18);
+		width: 100%;
+		max-height: toRem(55);
+		text-align: center;
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		transition: all 0.3s;
+		color: white;
+		padding: toRem(20);
+		width: toRem(245);
+		font-size: toRem(16);
+		&:hover{
+		background-color: #82ec00;
+		}
+		img{
+			// display: flex;
+			// margin-left: toRem(70);
+			// flex:0 1 toRem(12);
+			width: toRem(12);
+			height: toRem(12);
+			margin-right: toRem(25);
+		}
+	}
+	&__image{
+		width: toRem(120);
+		height: toRem(120);
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+	&__text{
+		font-size: toRem(16);
+		line-height: 150%;
+		text-align: center;
+		color: #000;
+		opacity: 0.4;
+		@include adaptiveValue("margin-bottom", 40, 30);
+	}
+	&__title{
+		font-weight: 600;
+		font-size: toRem(22);
+		@include adaptiveValue("margin-bottom", 15, 10);
+	}
+}
+
+// <div className="drawer__empty empty-drawer">
+// <div className="empty-drawer__image"><img src="@img/empty.png" alt="Image"></img></div>
+// <h3 className="empty-drawer__title">Корзина пустая</h3>
+// <div className="empty-drawer__text">Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ</div>
+// <button className="empty-drawer__button">
+// 	<img src="@img/arrow-02.svg" alt="Image"></img>
+// 	<span>Вернуться назад</span>
+// </button>
+// </div>
+
+// <img onClick={onClickClose} className="drawer__button" src="/img/btn.svg" alt="button" />
+// </div>
